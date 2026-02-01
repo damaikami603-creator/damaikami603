@@ -1,116 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>3D Human Heart</title>
-  <meta name="description" content="Interactive 3D Human Heart model">
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Amazing Human Heart - Scientific Facts & Interactive 3D</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(to right, #d32f2f, #b71c1c);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3em;
+    }
+    section {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      color: #c62828;
+      border-bottom: 3px solid #ef9a9a;
+      padding-bottom: 10px;
+    }
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+    .fact-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 25px;
+      text-align: center;
+    }
+    .fact-card h3 {
+      color: #d32f2f;
+      margin-top: 0;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      margin: 20px 0;
+    }
+    .three-d-container {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      margin: 40px 0;
+      height: 500px;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+  </style>
 </head>
-
 <body>
 
   <header>
-    <h1>Human Heart</h1>
-    <p>Interactive 3D Model</p>
+    <h1>The Human Heart</h1>
+    <p>Discover fascinating scientific facts about your heart – the tireless engine of life</p>
   </header>
 
-  <!-- 3D Viewer -->
-  <section id="viewer">
-    <div id="canvas-container">
-      <canvas id="heartCanvas"></canvas>
-    </div>
-    <div class="branding">
-      <span>powered by</span>
-      <img src="rahatam_logo.png" alt="Rahatam Logo">
-    </div>
-  </section>
-
-  <!-- Info Section -->
-  <section id="info" class="info-box">
-    <h2>About the Human Heart</h2>
-
-    <p>
-      The human heart is a muscular organ that works as a pump.
-      It circulates blood throughout the body to supply oxygen
-      and nutrients and to remove waste materials.
-    </p>
-
-    <p>
-      The heart is about the size of a closed fist and is located
-      slightly towards the left side of the chest, between the lungs.
-    </p>
-
-    <h3>Structure of the Heart</h3>
-    <ul>
-      <li>🫀 The heart has four chambers</li>
-      <li>➡️ Two upper chambers: Right Atrium and Left Atrium</li>
-      <li>⬇️ Two lower chambers: Right Ventricle and Left Ventricle</li>
-    </ul>
-
-    <h3>Functions of the Heart</h3>
-    <ul>
-      <li>❤️ Pumps blood continuously throughout life</li>
-      <li>🩸 Supplies oxygen-rich blood to the body</li>
-      <li>🔄 Removes carbon dioxide and other waste materials</li>
-    </ul>
-  </section>
-
-  <!-- Labelled Diagram Section -->
-  <section id="diagram">
-    <h2>Labelled Diagram Of Human Heart</h2>
-    <div class="diagram-container">
-      <img src="heart label.png" alt="Labelled Heart Diagram">
+  <section>
+    <h2>Key Scientific Facts</h2>
+    <div class="facts">
+      <div class="fact-card">
+        <h3>Beats ~100,000 times per day</h3>
+        <p>Your heart beats about 100,000 times daily, pumping blood throughout your body non-stop. Over a lifetime, that's more than 2.5–3 billion beats.</p>
+      </div>
+      <div class="fact-card">
+        <h3>Pumps ~2,000 gallons daily</h3>
+        <p>It pumps around 2,000 gallons (7,500 liters) of blood each day, enough to fill a small swimming pool.</p>
+      </div>
+      <div class="fact-card">
+        <h3>Size of a fist (adult)</h3>
+        <p>An adult heart is roughly the size of two clasped hands or a large fist, weighing 7–15 ounces (200–425 grams).</p>
+      </div>
+      <div class="fact-card">
+        <h3>4 Chambers & Valves</h3>
+        <p>It has four chambers (two atria, two ventricles) and four main valves that ensure one-way blood flow.</p>
+      </div>
+      <div class="fact-card">
+        <h3>Own "Little Brain"</h3>
+        <p>The heart has its own nervous system with ~40,000 neurons, allowing it to sense and respond independently.</p>
+      </div>
+      <div class="fact-card">
+        <h3>Produces Hormones</h3>
+        <p>It releases hormones like atrial natriuretic peptide to help regulate blood pressure and fluid balance.</p>
+      </div>
     </div>
   </section>
 
-  <!-- Heart Attack Info Section -->
-  <section id="heart-attack" class="info-box">
-    <h2>Heart Attack</h2>
-    <p>
-      A heart attack happens when the blood flow to a part of the heart muscle is suddenly blocked.
-      Because the heart does not get enough oxygen, the muscle begins to get damaged or die if treatment is delayed.
-    </p>
+  <section>
+    <h2>Heart Anatomy Images</h2>
+    <p>Here are detailed scientific illustrations of the heart structure and function.</p>
 
-    <h3>Why Does a Heart Attack Occur?</h3>
-    <p>The most common cause is blockage in the coronary arteries, which supply blood to the heart. This blockage
-      usually happens due to:</p>
-    <ul>
-      <li>🔴 Build-up of fat, cholesterol, and plaque inside arteries</li>
-      <li>🩸 Blood clot formation over a plaque</li>
-      <li>📈 High blood pressure damaging artery walls</li>
-      <li>🚬 Smoking, which narrows blood vessels</li>
-      <li>⚖️ Diabetes and obesity</li>
-      <li>🧘 High stress and lack of physical activity</li>
-    </ul>
+<grok-card data-id="e333f9" data-type="image_card" data-plain-type="render_searched_image"  data-arg-size="LARGE" ></grok-card>
 
-    <h3>Preventive Measures</h3>
-    <p>Many heart attacks can be prevented by adopting a healthy lifestyle:</p>
-    <ul>
-      <li>🫀 Eat a heart-healthy diet (low fat, low salt, more fruits & vegetables)</li>
-      <li>🏃 Exercise regularly (at least 30 minutes a day)</li>
-      <li>🚭 Avoid smoking and tobacco</li>
-      <li>⚖️ Maintain a healthy weight</li>
-      <li>🧘 Manage stress properly</li>
-      <li>🩺 Control blood pressure, cholesterol, and diabetes</li>
-      <li>😴 Get enough sleep</li>
-    </ul>
+
+
+<grok-card data-id="78577a" data-type="image_card" data-plain-type="render_searched_image"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="b8879e" data-type="image_card" data-plain-type="render_searched_image"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="f6dfe6" data-type="image_card" data-plain-type="render_searched_image"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="413733" data-type="image_card" data-plain-type="render_searched_image"  data-arg-size="LARGE" ></grok-card>
+
+
   </section>
 
-  <!-- THREE.JS -->
-  <script src="https://unpkg.com/three@0.146.0/build/three.min.js"></script>
-  <script src="https://unpkg.com/three@0.146.0/examples/js/controls/OrbitControls.js"></script>
-  <script src="https://unpkg.com/three@0.146.0/examples/js/loaders/GLTFLoader.js"></script>
+  <section>
+    <h2>Interactive 3D Model of the Human Heart</h2>
+    <p>Explore this realistic 3D model interactively: rotate, zoom, and view from any angle (mouse drag or touch on mobile).</p>
+    <div class="three-d-container">
+      <iframe title="Realistic Human Heart 3D Model" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/3f8072336ce94d18b3d0d055a1ece089/embed?autostart=1&camera=0&ui_controls=1&ui_help=1&ui_info=1&ui_inspector=1&ui_settings=1"></iframe>
+    </div>
+    <p><small>Model credit: Sketchfab (CC Attribution license). Free to embed and view.</small></p>
+  </section>
 
-  <script src="script.js"></script>
-
+  <footer>
+    <p>Educational website about the human heart © 2026 | Facts sourced from medical and scientific resources</p>
+  </footer>
 
 </body>
-
 </html>
